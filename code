@@ -1,0 +1,55 @@
+import random
+
+personagens = [
+  'fleabag', 
+  'claire', 
+  'priest', 
+  'martin', 
+  'boo', 
+  'harry', 
+  'klare', 
+  'dad', 
+  'hilary']
+
+quotes = {
+  'fleabag':'maybe hapiness is not what you believe, but who you belive.', 
+  'claire':'the only person i d run through an airport for is you.', 
+  'priest':'... when you find somebody that you love, it feels like hope.',
+  'martin':'i m not a bad guy, i just have a bad personality.',
+  'boo':'as long as i can wear it or eat it, i m happy.',
+  'harry':'loving you is painful enogh.', 
+  'klare':'hello, claire.', 
+  'dad':'i love you, but i m not sure that i like you.',
+  'hilary':'...' 
+}
+
+eu_sou = random.choice(personagens) #escolhe aleatoriamente um personagem da lista
+frase = quotes[eu_sou] #pega a chave do personagem e retorna o valor dele
+
+print("Bem-vinde ao jogo!")
+print("Os personagens desse jogo são da série 'Fleabag'")
+print("O jogo funciona assim:")
+print("Irei escolher um personagem da série e te direi alguma frase dele.")
+print("Você deve tentar adivinhar quem eu sou.")
+print("As regras do jogo são:")
+print("1. Utilize letras minúsculas nas respostas")
+print("2. Se quiser desistir, digite 'sair'")
+print()
+print(f"Durante a série, eu disse: '{frase}'")
+print()
+
+chute = str(input("Quem eu sou? "))
+if chute == eu_sou:
+  print(f"Parabéns, você acertou! Eu sou {eu_sou}")
+    
+while chute!= eu_sou:
+  tentativa = str(input(f"Você errou, tente novamente. Que personagem você acha que eu sou? "))
+  if tentativa == "sair":
+    print(f"Que pena que desistiu :( Meu personagem era {eu_sou}")
+    break
+  elif tentativa == eu_sou:
+    print(f"Parabéns, você acertou! Eu sou {eu_sou}")
+    break
+  chute = tentativa
+  
+  
